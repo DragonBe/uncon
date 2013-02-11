@@ -1,0 +1,38 @@
+<?php $this->headTitle('Overview of uncon proposals') ?>
+
+<h1>Overview of uncon proposals</h1>
+
+<?php if (empty ($this->list)): ?>
+<p>No proposals were made yet. <a href="<?php echo $this->url(array (), null, true) ?>" title="Submit a proposal now">Submit a proposal now</a>!</p>
+<?php else: ?>
+
+<table>
+    <tr>
+        <th>Titel</th>
+        <th>Name</th>
+        <th>Twitter</th>
+        <th>Votes</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <?php foreach ($this->list as $uncon): ?>
+    
+    <tr>
+        <td><?php echo $this->escape($uncon->getTitle()) ?></td>
+        <td><?php echo $this->escape($uncon->getName()) ?></td>
+        <td><?php echo $this->escape($uncon->getTwitter()) ?></td>
+        <td><?php echo $this->escape($uncon->getVotes()) ?></td>
+        <td><?php if (3 > $this->voted): ?><a href="<?php echo $this->url(array (
+            'module' => 'vote',
+            'controller' => 'index',
+            'action' => 'vote',
+            'id' => $uncon->getId(),
+            'token' => $this->token,
+        ), null, true) ?>" title="Cast your vote">+1</a><?php endif; ?></td>
+    </tr>
+    
+    <?php endforeach; ?>
+    
+</table>
+
+<?php endif; ?>

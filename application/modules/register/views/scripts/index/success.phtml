@@ -1,0 +1,12 @@
+<?php $this->headTitle('Your registration was successfully saved') ?>
+
+<h1>Success!</h1>
+
+<p>You're registration is now successfully saved. Now it's time for you to
+direct people to your entry and let them vote for you.</p>
+
+<p>Or <a href="<?php echo $this->url(array (
+    'module' => 'register',
+    'controller' => 'index',
+    'action' => 'index',
+), null, true) ?>" title="Register a new proposal">register</a> a new proposal.</p>

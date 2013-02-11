@@ -1,0 +1,17 @@
+<?php $this->headTitle('Your moment to shine') ?>
+
+<h1>Welcome</h1>
+
+<p>You've reached this page because you were encouraged to participate in the
+    uncon sessions.</p>
+
+<p><a class="button" title="Register a talk" href="<?php echo $this->url(array (
+    'module' => 'register',
+    'controller' => 'index',
+    'action' => 'index',
+), null, true) ?>">Register a talk</a> <a class="button" title="Vote for a talk"
+   href="<?php echo $this->url(array (
+       'module' => 'vote',
+       'controller' => 'index',
+       'action' => 'index',
+   ), null, true) ?>">Vote for a talk</a></p>
